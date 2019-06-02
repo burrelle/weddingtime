@@ -1,0 +1,18 @@
+type User {
+  id: ID! @id
+  name: String!
+}
+
+type RSVP {
+  id: ID! @id
+  party: String! @unique
+  guests: [Guest!]!
+}
+
+type Guest {
+  id: ID! @id
+  forename: String!
+  surname: String!
+  attending: Boolean! @default(value: false)
+  rsvp: RSVP!
+}
