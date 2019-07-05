@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  postgres_dev:
+    image: postgres
+    restart: always
+    ports:
+      - '54321:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: weddingtime_dev
+  postgres_test:
+    image: postgres
+    restart: always
+    ports:
+      - '54322:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: weddingtime_test
